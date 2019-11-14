@@ -1,8 +1,8 @@
 #include "ngy_headers.h"
 
-ngx_uint_t ngx_pagesize;
-ngx_uint_t ngx_pagesize_shift;
-ngx_uint_t ngx_cacheline_size;
+ngy_uint_t ngy_pagesize=4096;
+ngy_uint_t ngy_pagesize_shift;
+ngy_uint_t ngy_cacheline_size;
 
 void *
 ngy_alloc(size_t size)
@@ -22,7 +22,7 @@ void *
 ngx_calloc(size_t size)
 {
     void *p;
-    p = ngx_alloc(size);
+    p = ngy_alloc(size);
     if (p)
     {
         memset(p, 0, size);
@@ -36,7 +36,7 @@ void ngy_free(void *ptr)
 }
 
 void *
-ngx_memalign(size_t alignment, size_t size)
+ngy_memalign(size_t alignment, size_t size)
 {
     void *p;
 
