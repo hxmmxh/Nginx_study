@@ -8,6 +8,7 @@
 #include "ngy_int.h"
 #include "ngy_log_s.h"
 #include "ngy_palloc.h"
+#include "ngy_queue.h"
 
 typedef unsigned char u_char;
 typedef int ngy_fd_t;
